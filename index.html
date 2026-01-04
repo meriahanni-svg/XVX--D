@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>MOSSLIMFF GHOST PANEL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>👻 MOSSLIMFF GHOST</h1>
+
+  <!-- GHOST -->
+  <h3>Ghost</h3>
+  <input type="text" id="name" placeholder="أدخل الاسم">
+  <input type="text" id="team" placeholder="أدخل Team Code">
+  <button onclick="runGhost()">تشغيل</button>
+
+  <!-- SPAM -->
+  <h3>Spam (.)</h3>
+  <input type="text" id="spamId" placeholder="أدخل ID اللاعب">
+  <button onclick="runSpam()">تشغيل Spam</button>
+
+  <!-- VISIT -->
+  <h3>Visit (.)</h3>
+  <input type="text" id="visitId" placeholder="أدخل ID">
+  <button onclick="runVisit()">تشغيل Visit</button>
+
+  <pre id="output">Waiting...</pre>
+
+  <div class="footer">
+    Dev © Instagram:
+    <a href="https://instagram.com/d09_l7" target="_blank">@d09_l7</a>
+  </div>
+</div>
+
+<script>
+function runGhost() {
+  const name = document.getElementById("name").value || "mosslimff";
+  const team = document.getElementById("team").value || "0000000";
+
+  const res = {
+    command: "ghost",
+    bot_name: "mosslimff",
+    master_name: "فلسطين حرة 🇵🇸",
+    results: {
+      "4228417617": `GHOST: ✅ /mosslimff executed | Name: ${name}`,
+      "4248100361": `GHOST: ✅ /mosslimff executed | Name: ${name}`,
+      "4248103380": `MASTER: ✅ command executed successfully | Name: فلسطين حرة 🇵🇸`,
+      "4248116517": `GHOST: ✅ /mosslimff executed | Name: ${name}`
+    },
+    team_code: team
+  };
+
+  show(res);
+}
+
+function runSpam() {
+  const id = document.getElementById("spamId").value || "00000000";
+
+  const res = {
+    command: "spam",
+    target_id: id,
+    status: "success",
+    message: "✅تم تقبير اللاعب(.)",
+    bot_name: "mosslimff"
+  };
+
+  show(res);
+}
+
+function runVisit() {
+  const id = document.getElementById("visitId").value || "00000000";
+
+  const res = {
+    command: "visit",
+    target_id: id,
+    status: "success",
+    result: "✅ تم زيادة 200 زيارة (.)",
+    bot_name: "mosslimff"
+  };
+
+  show(res);
+}
+
+function show(obj) {
+  document.getElementById("output").textContent =
+    JSON.stringify(obj, null, 2);
+}
+</script>
+
+</body>
+  </html>
